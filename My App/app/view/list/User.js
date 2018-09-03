@@ -14,6 +14,13 @@ Ext.define('MyApp.view.list.User', {
     },
 
     columns: [{ 
+        text: 'Id',
+        dataIndex: 'id',
+        width: 100,
+        cell: {
+            userCls: 'bold'
+        }
+    },{ 
         text: 'Name',
         dataIndex: 'name',
         width: 100,

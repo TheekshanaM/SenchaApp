@@ -2,6 +2,6 @@ Ext.define('MyApp.model.Personnel', {
     extend: 'MyApp.model.Base',
 
     fields: [
-        'name', 'email', 'phone'
+        'id','name', 'email', 'phone'
     ]
 });

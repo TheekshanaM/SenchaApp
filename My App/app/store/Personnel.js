@@ -4,19 +4,36 @@ Ext.define('MyApp.store.Personnel', {
     alias: 'store.personnel',
 
     model: 'MyApp.model.Personnel',
-
+    /*
     data: { items: [
         { name: 'Jean Luc', email: "jeanluc.picard@enterprise.com", phone: "555-111-1111" },
         { name: 'Worf',     email: "worf.moghsson@enterprise.com",  phone: "555-222-2222" },
         { name: 'Deanna',   email: "deanna.troi@enterprise.com",    phone: "555-333-3333" },
         { name: 'Data',     email: "mr.data@enterprise.com",        phone: "555-444-4444" }
-    ]},
+    ]},*/
+    
+    autoLoad: true,
+    pageSize: null,
+    
+    proxy: {
+        type: 'rest',
+        url: 'http://localhost:25231/api/Personnel/',
 
+        reader: {
+            type: 'json',
+            rootProperty: 'data',
+
+            // Do not attempt to load orders inline.
+            // They are loaded through the proxy
+            implicitIncludes: false
+        }
+    }
+    /*
     proxy: {
         type: 'memory',
         reader: {
             type: 'json',
             rootProperty: 'items'
         }
-    }
+    }*/
 });

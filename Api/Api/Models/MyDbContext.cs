@@ -9,5 +9,6 @@ namespace Api.Models
     public class MyDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Personnel> Personnel { get; set; }
     }
 }
