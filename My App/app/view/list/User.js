@@ -2,7 +2,9 @@
 Ext.define('MyApp.view.list.User', {
     extend: 'Ext.grid.Grid',
     xtype: 'mainlist',
-
+    
+    id: 'userTab',
+    
     requires: [
         'MyApp.store.Personnel'
     ],
@@ -13,14 +15,14 @@ Ext.define('MyApp.view.list.User', {
         type: 'personnel'
     },
 
-    columns: [{ 
+    columns: [/*{ 
         text: 'Id',
         dataIndex: 'id',
         width: 100,
         cell: {
             userCls: 'bold'
         }
-    },{ 
+    },*/{ 
         text: 'Name',
         dataIndex: 'name',
         width: 100,

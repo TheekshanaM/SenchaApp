@@ -64,21 +64,22 @@ namespace Api.Controllers
         }
 
         // POST api/Personnel
-        public HttpResponseMessage PostPersonnel(Personnel personnel)
+        [HttpPost]
+        public HttpResponseMessage PostPersonnelUpdate(Personnel personnel)
         {
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
                 db.Personnel.Add(personnel);
                 db.SaveChanges();
 
                 HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, personnel);
                 response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = personnel.id }));
                 return response;
-            }
+            /*}
             else
             {
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
-            }
+            }*/
         }
 
         // DELETE api/Personnel/5

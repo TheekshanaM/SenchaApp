@@ -18,14 +18,15 @@ Ext.define('MyApp.store.Personnel', {
     proxy: {
         type: 'rest',
         url: 'http://localhost:25231/api/Personnel/',
-
         reader: {
             type: 'json',
             rootProperty: 'data',
 
-            // Do not attempt to load orders inline.
-            // They are loaded through the proxy
+            
             implicitIncludes: false
+        },
+        writer :{
+            type: 'json'
         }
     }
     /*
