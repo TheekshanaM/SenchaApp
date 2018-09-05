@@ -1,6 +1,6 @@
-Ext.define('MyApp.controller.CreateUserController', {
+Ext.define('MyApp.controller.EditeUserController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.CreateUser',
+    alias: 'controller.EditUser',
 
     onSaveTap: function(Name) {
 
@@ -24,10 +24,16 @@ Ext.define('MyApp.controller.CreateUserController', {
         //Ext.Viewport.setActiveItem(Ext.create('MyApp.view.list.MainList'));
         var a = Ext.ComponentQuery.query('#userTab')[0];
         a.getStore().load();
-        //console.log(a);
-        //var b = Ext.ComponentQuery.query('#mainList')[0];
-        
-        //console.log(b);
+        console.log(a);
+        var b = Ext.ComponentQuery.query('#mainList')[0];
+        var currentTab = b.getActiveTab();
+
+        tabPanel.setActiveTab(0);
+        //tabPanel.setActiveTab(1);
+        //tabPanel.setActiveTab(2);
+
+        tabPanel.setActiveTab(currentTab);
+        console.log(b);
     },
 
     onResetTap: function() {

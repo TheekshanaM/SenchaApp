@@ -3,6 +3,7 @@ Ext.define('MyApp.view.list.MainList', {
     extend: 'Ext.tab.Panel',
     xtype: 'app-main',
 
+    id:'mainList',
     
     requires: [
         'Ext.MessageBox',

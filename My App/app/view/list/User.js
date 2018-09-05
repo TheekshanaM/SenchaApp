@@ -8,7 +8,7 @@ Ext.define('MyApp.view.list.User', {
     requires: [
         'MyApp.store.Personnel'
     ],
-
+    
     title: 'Personnel',
 
     store: {

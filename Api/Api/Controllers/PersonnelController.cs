@@ -11,6 +11,8 @@ using System.Web.Http;
 using Api.Models;
 using System.Web.Http.Cors;
 
+
+
 namespace Api.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
@@ -67,8 +69,8 @@ namespace Api.Controllers
         [HttpPost]
         public HttpResponseMessage PostPersonnelUpdate(Personnel personnel)
         {
-            //if (ModelState.IsValid)
-            //{
+            /*if (ModelState.IsValid)
+            {*/
                 db.Personnel.Add(personnel);
                 db.SaveChanges();
 

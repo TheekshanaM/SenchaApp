@@ -9,6 +9,6 @@ Ext.define('MyApp.model.Personnel', {
     proxy: {
         method: 'POST',
         type: 'rest',
-        url : 'http://localhost:25231/api/Personnel/PostPersonnelUpdate'
+        url : 'http://localhost:25231/api/Personnel/'
     }
 });
