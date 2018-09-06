@@ -21,9 +21,15 @@ Ext.define('MyApp.controller.CreateUserController', {
         user.save();
         
         Ext.toast('User Created', 2000);
+        var task = new Ext.util.DelayedTask(function(){
+            //your loading panel2 with heavy data goes here
+            var a = Ext.ComponentQuery.query('#userTab')[0];
+            a.getStore().load();
+        });
+        task.delay(1000);
+        this.getView().reset();
         //Ext.Viewport.setActiveItem(Ext.create('MyApp.view.list.MainList'));
-        var a = Ext.ComponentQuery.query('#userTab')[0];
-        a.getStore().load();
+        
         //console.log(a);
         //var b = Ext.ComponentQuery.query('#mainList')[0];
         

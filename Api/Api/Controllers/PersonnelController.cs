@@ -42,6 +42,7 @@ namespace Api.Controllers
         }
 
         // PUT api/Personnel/5
+        [HttpPut]
         public HttpResponseMessage PutPersonnel(int id, Personnel personnel)
         {
             if (ModelState.IsValid && id == personnel.id)

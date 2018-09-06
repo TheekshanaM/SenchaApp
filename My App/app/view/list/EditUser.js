@@ -1,7 +1,7 @@
 Ext.define('MyApp.view.list.EditUser', {
     extend: 'Ext.form.Panel',
     xtype: 'EditUser',
-    //controller: 'EditUser',
+    controller: 'EditUser',
 
     requires: [
         'Ext.field.*',
@@ -27,7 +27,7 @@ Ext.define('MyApp.view.list.EditUser', {
         handler: 'onSaveTap'
     }, {
         text: 'Cansel',
-        handler: 'onResetTap'
+        handler: 'cansel'
     }],
 
     /*bind: {
@@ -38,12 +38,13 @@ Ext.define('MyApp.view.list.EditUser', {
         reference: 'fieldset1',
         title: 'Personal Info',
         instructions: 'Please enter the information above.',
-        items: [/*{
+        items: [{
+            reference: 'id',
             xtype: 'hiddenfield',
-            type='hidden',
+            //type='hidden',
             id: 'uId',
             name: 'id'
-        },*/{
+        },{
             reference: 'name',
             xtype: 'textfield',
             id:'uName',

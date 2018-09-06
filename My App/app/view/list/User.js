@@ -37,7 +37,25 @@ Ext.define('MyApp.view.list.User', {
         text: 'Phone',
         dataIndex: 'phone',
         width: 150 
+    },{
+        width: 70,
+
+        cell: {
+            tools: {
+                
+                decline: {
+                    //label: 'Delete',
+                    iconCls: 'x-fa fa-ban red',
+                    handler: 'Delete',
+                    weight: 1
+                }
+            }
+        }
     }],
+
+    signTpl: '<span style="' +
+            'color:{value:sign("${red}", "${green}")}"' +
+        '>{text}</span>',
 
     listeners: {
         select: 'onItemSelected'
