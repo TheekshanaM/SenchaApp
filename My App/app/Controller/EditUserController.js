@@ -2,6 +2,8 @@ Ext.define('MyApp.controller.EditeUserController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.EditUser',
 
+    //requires: ['MyApp.controller.MainController'],
+
     onSaveTap: function(Name) {
         var id  = this.lookupReference('id').getValue(),
                           name= this.lookupReference('name').getValue(),
@@ -26,24 +28,31 @@ Ext.define('MyApp.controller.EditeUserController', {
                 }
             }
         );
-        //Ext.Viewport.setActiveItem(Ext.create('MyApp.view.list.MainList'));
-        /*Ext.toast('User Created', 2000);
-        //Ext.Viewport.setActiveItem(Ext.create('MyApp.view.list.MainList'));
-        var a = Ext.ComponentQuery.query('#userTab')[0];
-        a.getStore().load();
-        console.log(a);
-        var b = Ext.ComponentQuery.query('#mainList')[0];
-        var currentTab = b.getActiveTab();
+        var task = new Ext.util.DelayedTask(function(){
+            //your loading panel2 with heavy data goes here
+            var a = Ext.ComponentQuery.query('#userTab')[0];
+            a.getStore().load();
+        });
+        task.delay(100);
 
-        tabPanel.setActiveTab(0);
-        //tabPanel.setActiveTab(1);
-        //tabPanel.setActiveTab(2);
-
-        tabPanel.setActiveTab(currentTab);
-        console.log(b);*/
+        var view = Ext.create('Ext.NavigationView', {
+            fullscreen: true,
+            //items: [{}]
+        });
+        //view.getNavigationBar().hide();
+        //var domId = Ext.ComponentQuery.query('#userTab')[0];
+        
+        
+        view.push(Ext.create('MyApp.view.list.MainList'));
+        //var b = Ext.ComponentQuery.query('#mainList')[0];
+        //b.getView();
+        //console.log(b);
     },
 
     cansel: function() {
-        Ext.Viewport.setActiveItem(Ext.create('MyApp.view.list.MainList'));
+        var view = this.getController("main-list").view;
+        view.pop(1);
+
+        
     }
 });

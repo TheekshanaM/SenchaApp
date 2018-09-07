@@ -1,13 +1,14 @@
 
 Ext.define('MyApp.view.list.User', {
     extend: 'Ext.grid.Grid',
+    //view: 'Ext.NavigationView',
     xtype: 'mainlist',
     
     id: 'userTab',
     
-    requires: [
+    /*requires: [
         'MyApp.store.Personnel'
-    ],
+    ],*/
     
     title: 'Personnel',
 
@@ -56,8 +57,11 @@ Ext.define('MyApp.view.list.User', {
     signTpl: '<span style="' +
             'color:{value:sign("${red}", "${green}")}"' +
         '>{text}</span>',
-
+    
     listeners: {
+        
         select: 'onItemSelected'
+        
     }
 });
+

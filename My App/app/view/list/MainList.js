@@ -2,12 +2,13 @@
 Ext.define('MyApp.view.list.MainList', {
     extend: 'Ext.tab.Panel',
     xtype: 'app-main',
+    view: 'Ext.NavigationView',
 
     id:'mainList',
     
     requires: [
         'Ext.MessageBox',
-        'Ext.layout.Fit'
+        'Ext.layout.Card'
     ],
 
     controller: 'main-list',

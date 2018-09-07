@@ -39,10 +39,15 @@ Ext.define('MyApp.controller.MainController', {
 
     onItemSelected: function (sender, record) {
         
-        
+        var view = Ext.create('Ext.NavigationView', {
+            fullscreen: true,
+            //items: [{}]
+        });
+        view.getNavigationBar().hide();
+        view.push(Ext.create('MyApp.view.list.EditUser'));
         
         //Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
-        Ext.Viewport.setActiveItem(Ext.create('MyApp.view.list.EditUser'));
+        //Ext.Viewport.setActiveItem(Ext.create('MyApp.view.list.EditUser'));
         Ext.ComponentQuery.query('#uId')[0].setValue(record[0].getData().id);
         Ext.ComponentQuery.query('#uName')[0].setValue(record[0].getData().name);
         Ext.ComponentQuery.query('#uEmail')[0].setValue(record[0].getData().email);
