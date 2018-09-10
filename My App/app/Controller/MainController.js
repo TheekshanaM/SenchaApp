@@ -39,11 +39,7 @@ Ext.define('MyApp.controller.MainController', {
 
     onItemSelected: function (sender, record) {
         
-        var view = Ext.create('Ext.NavigationView', {
-            fullscreen: true,
-            //items: [{}]
-        });
-        view.getNavigationBar().hide();
+        var view= MyApp.app.globals.view
         view.push(Ext.create('MyApp.view.list.EditUser'));
         
         //Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);

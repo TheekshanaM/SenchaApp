@@ -8,6 +8,9 @@ Ext.define('MyApp.Application', {
 
     name: 'MyApp',
 
+    globals:{
+        view:''
+    },
     quickTips: false,
     platformConfig: {
         desktop: {

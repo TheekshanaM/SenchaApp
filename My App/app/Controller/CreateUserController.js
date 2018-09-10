@@ -28,12 +28,7 @@ Ext.define('MyApp.controller.CreateUserController', {
         });
         task.delay(1000);
         this.getView().reset();
-        //Ext.Viewport.setActiveItem(Ext.create('MyApp.view.list.MainList'));
         
-        //console.log(a);
-        //var b = Ext.ComponentQuery.query('#mainList')[0];
-        
-        //console.log(b);
     },
 
     onResetTap: function() {

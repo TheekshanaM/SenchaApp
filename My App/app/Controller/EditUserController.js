@@ -28,30 +28,28 @@ Ext.define('MyApp.controller.EditeUserController', {
                 }
             }
         );
+        Ext.toast('Updated', 2000);
         var task = new Ext.util.DelayedTask(function(){
             //your loading panel2 with heavy data goes here
             var a = Ext.ComponentQuery.query('#userTab')[0];
             a.getStore().load();
         });
-        task.delay(100);
-
-        var view = Ext.create('Ext.NavigationView', {
-            fullscreen: true,
-            //items: [{}]
-        });
+        task.delay(500);
+        
+        var view = MyApp.app.globals.view;
         //view.getNavigationBar().hide();
         //var domId = Ext.ComponentQuery.query('#userTab')[0];
         
         
-        view.push(Ext.create('MyApp.view.list.MainList'));
+        view.pop();
         //var b = Ext.ComponentQuery.query('#mainList')[0];
         //b.getView();
         //console.log(b);
     },
 
     cansel: function() {
-        var view = this.getController("main-list").view;
-        view.pop(1);
+        var view = MyApp.app.globals.view;
+        view.pop();
 
         
     }
