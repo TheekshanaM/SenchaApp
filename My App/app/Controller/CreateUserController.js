@@ -28,6 +28,9 @@ Ext.define('MyApp.controller.CreateUserController', {
         });
         task.delay(1000);
         this.getView().reset();
+
+        var tabpanel = Ext.ComponentQuery.query('#mainList')[0]; 
+        tabpanel.setActiveItem(0);
         
     },
 

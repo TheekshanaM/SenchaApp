@@ -2,7 +2,7 @@
 Ext.define('MyApp.view.list.MainList', {
     extend: 'Ext.tab.Panel',
     xtype: 'app-main',
-    view: 'Ext.NavigationView',
+    
 
     id:'mainList',
     
@@ -29,6 +29,7 @@ Ext.define('MyApp.view.list.MainList', {
             title: 'Home',
             iconCls: 'x-fa fa-home',
             layout: 'fit',
+            id: 'HomeTab',
             // The following grid shares a store with the classic version's grid as well!
             
             
